@@ -3,20 +3,20 @@
 int main() {
 
 	int arrayAmount;
-	int value;
+	float value;
 	float average;
 	int part;
 	int sum = 0;
 
 	printf("How many values are you entering?: ");
 	scanf("%d", &arrayAmount);
-	int values[arrayAmount];
+	float values[arrayAmount];
 
 	// input values	
 
 	for (int i = 0; i < arrayAmount; i++) {
 		printf("Number %d: ", i + 1);
-		scanf("%d", &value);
+		scanf("%f", &value);
 		values[i] = value;
 	} // end for loop
 	
@@ -28,7 +28,7 @@ int main() {
 
 	for (int i = 0; i < arrayAmount; i++) {
 
-		printf("%d ", values[i]);
+		printf("%.2f ", values[i]);
 	} // end of for loop
 
 	printf("] \n");
@@ -38,7 +38,9 @@ int main() {
 		sum = sum + part;
 	} // end of for loop
 
-	average = sum / arrayAmount;
+	average = sum / (float)arrayAmount;
 
-	printf("Average: %f \n", average);
+	printf("Average: %.2f \n", average);
+
+	return(0);
 } // end main
